@@ -1,7 +1,6 @@
-inp = "puzzle input"
+inp = """puzzle input here"""
 parts = inp.split()
 nums = [num for num in parts[0].split(",")]
-total = (len(parts)-1)/25
 boards = [[parts[i-4:i+1] for i in range(j+5, j+30, 5)] for j in range(0, 2500, 25)]
 
 def check_bingo(board):
@@ -10,7 +9,6 @@ def check_bingo(board):
     cols = list(zip(*board[::-1]))
     for column in cols:
         if len(set(column)) <= 1: return True
-
 
 def update_board(board, num):
     for i in range(5):
